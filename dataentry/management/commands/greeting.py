@@ -7,6 +7,7 @@ class Command(BaseCommand):
         parser.add_argument('name', type=str, help="Specifies user name")
 
     def handle(self, *args, **kwargs):
+        #greeting
         name = kwargs['name']
         greeting = f'Hello {name}, Good Morning'
         self.stdout.write(self.style.SUCCESS(greeting))
