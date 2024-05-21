@@ -2,8 +2,9 @@ from django.shortcuts import render, redirect
 from .utils import check_csv_errors, get_all_custom_models
 from uploads.models import Upload
 from django.conf import settings
-from .tasks import import_data_task
+from .tasks import import_data_task, export_data_task
 from django.contrib import messages
+from django.core.management import call_command
 
 def import_data(request):
     if request.method == 'POST':
@@ -38,3 +39,20 @@ def import_data(request):
             'custom_models': custom_models,
         }
     return render(request, 'dataentry/dataentry.html', context)
+
+def export_data(request):
+    if request.method == 'POST':
+        model_name = request.POST.get('model_name')
+
+        #call the export data task
+        export_data_task.delay(model_name)
+
+        #show messages to user
+        messages.success(request, 'Your data is exported, once its notified')
+        return redirect('export_data')
+    else:
+        custom_models = get_all_custom_models()
+        context = {
+            'custom_models': custom_models,
+        }
+    return render(request, 'dataentry/exportdata.html', context)
