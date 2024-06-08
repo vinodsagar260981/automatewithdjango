@@ -3,6 +3,10 @@
 <!-- navigation -->
 {% block content %}
 <div class="container" style="padding: 50px;">
+<<<<<<< HEAD
+=======
+    {% if user.is_authenticated %}
+>>>>>>> 01920a5 (login registration form)
     <h2 class="text-center">Automate The Boring Stuff With Django</h2>
     <div class="row pt-5">
         <!-- Import data -->
@@ -90,5 +94,22 @@
             </a>
         </div>
     </div>
+<<<<<<< HEAD
+=======
+    {% else %}
+    <div class="home-info">
+        <h2 class="text-center">Automate Boring stuff with Django</h2>
+        <p class="lead text-center text-muted">
+            "Automate the boring stuff with django" is a project where we have build an time consuming and repitative 
+            task, do it fast and more productive. 
+            This kind of work is called as Automation.
+            soon will be implementing AI !
+        </p>
+        <p class="lead text-center text-muted">Please login to use the features of AWD </p>
+    </div>
+
+
+    {% endif %}
+>>>>>>> 01920a5 (login registration form)
 </div>
 {% endblock %}

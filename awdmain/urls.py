@@ -25,4 +25,11 @@ urlpatterns = [
     path('', views.home, name="home"),
     path('dataentry/', include("dataentry.urls")),
     path('celery-task/', views.celery_test),
+<<<<<<< HEAD
+=======
+    #Register and Login path
+    path('register/', views.register, name='register'),
+    path('login/', views.login, name='login'),
+    path('logout/', views.logout, name='logout'),
+>>>>>>> 01920a5 (login registration form)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

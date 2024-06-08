@@ -16,11 +16,25 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+<<<<<<< HEAD
+=======
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+>>>>>>> 01920a5 (login registration form)
     <script src="{% static 'js/custom.js' %}"></script>
     <style>
       .form-group{
         padding: 15px !important;
       }
+<<<<<<< HEAD
+=======
+      .home-info{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+      }
+>>>>>>> 01920a5 (login registration form)
     </style>
   </head>
   <body>
@@ -28,11 +42,27 @@
     <nav class="navbar navbar-light bg-light">
       <div class="container">
         <a class="navbar-brand" href="{% url 'home' %}">Automate With Django</a>
+<<<<<<< HEAD
         <div>
           <a href="#" class="float-right text-decoration-none text-dark">Login</a>
           <!-- same -->
           &nbsp;<a href="#" class="float-right btn btn-success">Register</a>
         </div>
+=======
+        {% if user.is_authenticated %}
+        <div>
+          Logged as : <b>{{ user }}</b>
+          &nbsp;<a href="{% url 'logout' %}" class="float-right btn btn-outline-danger">Logout</a>
+        </div>
+
+        {% else %}
+        <div>
+          <a href="{% url 'login' %}" class="float-right text-decoration-none text-dark">Login</a>
+          <!-- same -->
+          &nbsp;<a href="{% url 'register' %}" class="float-right btn btn-success">Register</a>
+        </div>
+        {% endif %}
+>>>>>>> 01920a5 (login registration form)
       </div>
     </nav>
 
