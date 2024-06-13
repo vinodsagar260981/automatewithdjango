@@ -40,11 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'dataentry',
     'uploads',
-<<<<<<< HEAD
-=======
     'crispy_forms',
     'crispy_bootstrap5',
->>>>>>> 01920a5 (login registration form)
+    'emails',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -158,14 +157,17 @@ EMAIL_PORT = config('EMAIL_PORT', cast=int)
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 DEFAULT_FROM_EMAIL = 'Automate with Django <awscloudvinodsagar@gmail.com>'
-<<<<<<< HEAD
 DEFAULT_TO_EMAIL = 'vinodsagar0981@gmail.com'
-=======
-DEFAULT_TO_EMAIL = 'vinodsagar0981@gmail.com'
+
 
 CRISPY_TEMPLATE_PACK = 'uni_form'
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
 CRISPY_TEMPLATE_PACK = "bootstrap5"
->>>>>>> 01920a5 (login registration form)
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'height': 300,
+    },
+}

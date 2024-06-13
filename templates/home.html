@@ -3,10 +3,7 @@
 <!-- navigation -->
 {% block content %}
 <div class="container" style="padding: 50px;">
-<<<<<<< HEAD
-=======
     {% if user.is_authenticated %}
->>>>>>> 01920a5 (login registration form)
     <h2 class="text-center">Automate The Boring Stuff With Django</h2>
     <div class="row pt-5">
         <!-- Import data -->
@@ -38,7 +35,7 @@
 
         <!-- Bulk Emails -->
         <div class="col-md-4">
-            <a href="#" class="text-decoration-none text-dark">
+            <a href="{% url 'bulk_emails' %}" class="text-decoration-none text-dark">
                 <div class="card alert-danger shadow">
                     <div class="card-header">
                     <h4>Bulk Emails</h4>
@@ -94,8 +91,6 @@
             </a>
         </div>
     </div>
-<<<<<<< HEAD
-=======
     {% else %}
     <div class="home-info">
         <h2 class="text-center">Automate Boring stuff with Django</h2>
@@ -111,6 +106,5 @@
 
 
     {% endif %}
->>>>>>> 01920a5 (login registration form)
 </div>
 {% endblock %}

@@ -1,8 +1,6 @@
-<<<<<<< HEAD
 from django.shortcuts import render
 from django.http import HttpResponse
 from dataentry.tasks import holdon_celery
-=======
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from dataentry.tasks import holdon_celery
@@ -10,16 +8,13 @@ from .forms import RegistrationForm
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import auth
->>>>>>> 01920a5 (login registration form)
 
 def home(request):
     return render(request, 'home.html')
 
 def celery_test(request):
     holdon_celery.delay()
-<<<<<<< HEAD
     return HttpResponse('<h3>Function executed successfully</h3>')
-=======
     return HttpResponse('<h3>Function executed successfully</h3>')
 
 
@@ -65,4 +60,3 @@ def login(request):
 def logout(request):
     auth.logout(request)
     return redirect('home')
->>>>>>> 01920a5 (login registration form)
